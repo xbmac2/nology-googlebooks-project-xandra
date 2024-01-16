@@ -42,6 +42,3 @@ export const getBooksData = async (searchTerm) => {
   return cleanedData;
 };
 
-// export const testFunc = () => {
-//   console.log("testing");
-// }
