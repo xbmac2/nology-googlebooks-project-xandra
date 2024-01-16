@@ -27,7 +27,10 @@ const BooksCard = ({
   return (
     <article className={styles.card} onClick={toggleModal}>
       {/* no imageprovided thumbnail shuould actually be a link to the image */}
-      <img src={image} alt="" className={styles.padding}/>
+      <div className={styles.card_frame}>
+        <img src={image} alt="" className={styles.padding}/>
+      </div>
+      
       <div className={styles.padding}>
         <h3>{title}</h3>
         <p>{authorStr}</p>

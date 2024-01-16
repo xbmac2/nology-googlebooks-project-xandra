@@ -36,22 +36,7 @@ const BooksList = ({searchTerm}) => {
         image={book.image}
         />
         ))}
-        <BooksCard />
-        <BooksCard />
-        <BooksCard />
-        <BooksCard />
-        <BooksCard /><BooksCard />
-
-        <BooksCard />
-        <BooksCard /><BooksCard />
-        <BooksCard />
-        <BooksCard />
-        <BooksCard />
-        <BooksCard />
-        <BooksCard /><BooksCard />
-
-        <BooksCard />
-        <BooksCard /><BooksCard />
+        
       </section>
 
       
