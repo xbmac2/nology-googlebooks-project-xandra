@@ -1,0 +1,30 @@
+.container {
+  
+  width: 100%;
+  padding-top: 10px;
+  //border: 1px solid grey;
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+}
+
+.books_section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  //gap: 1rem;
+  
+}
+
+.books_section2 {
+  display: grid;
+  //grid-template-columns: auto auto auto auto;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+}
+
+.books_testing {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 1rem;
+}

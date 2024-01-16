@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Philosopher&display=swap');
+
+.card {
+  border: 1px solid black;
+  border-radius: 3px;
+  //width: 400px;
+  margin: 5px;
+
+  font-family: 'Mulish', sans-serif;
+  text-align: center;
+
+  &:hover {
+    background-color: lightgray;
+  }
+
+  & h3 {
+    font-family: 'Philosopher', sans-serif;
+  }
+}
+
+.padding {
+  padding: 5px;
+}
+
+.card_testing {
+  border: 1px solid red;
+  border-radius: 3px;
+  //width: 400px;
+  //max-width: 25%;
+  margin: 5px;
+
+  font-family: 'Mulish', sans-serif;
+  text-align: center;
+
+  &:hover {
+    background-color: lightgray;
+  }
+
+  & h3 {
+    font-family: 'Philosopher', sans-serif;
+  }
+}
