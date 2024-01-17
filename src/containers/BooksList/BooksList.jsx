@@ -1,7 +1,7 @@
 import BooksCard from "../../components/BooksCard/BooksCard"
 import styles from "./BooksList.module.scss"
 
-import { getBooksData } from "../../data/data"
+import { getBooksData, getMoreBooksData } from "../../data/data"
 import { useState, useEffect } from "react"
 
 const BooksList = ({searchTerm}) => {
@@ -29,6 +29,24 @@ const BooksList = ({searchTerm}) => {
 
   //let booksToDisplay = [...booksFetched];
 
+  //console.log(booksFetched,"booksFeched array")
+
+  let startIndex = booksFetched.length;
+
+  const handleShowMoreBooks = () => {
+    setIsLoading(true);
+    getMoreBooksData(searchTerm, startIndex).then((results) => {
+      setIsLoading(false);
+      //console.log(results);
+      setBooksFetched((prev) => {
+        return [...prev, ...results];
+      })
+    })
+  };
+
+  console.log(startIndex, "start index");
+  //console.log(booksFetched,"booksFeched array")
+
   return (
     <div className={styles.container}>
       {isLoading && <p>Loading...</p>}
@@ -47,7 +65,7 @@ const BooksList = ({searchTerm}) => {
         ))}
         
       </section>
-      <button>Show more results</button>
+      <button onClick={handleShowMoreBooks}>Show more results</button>
       <p className={styles.to_top} onClick={scrollToTop}>Back to top</p>
     </div>
   )
