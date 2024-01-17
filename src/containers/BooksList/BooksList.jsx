@@ -9,7 +9,7 @@ const BooksList = ({searchTerm}) => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behaviour: "smooth"
+      behavior: "smooth"
     });
   };
  
@@ -45,20 +45,6 @@ const BooksList = ({searchTerm}) => {
         pages={book.pages}
         />
         ))}
-        <BooksCard />
-        <BooksCard />
-        <BooksCard />
-        <BooksCard />
-        <BooksCard />
-        <BooksCard />
-        <BooksCard />
-        <BooksCard />
-        <BooksCard />
-        <BooksCard />
-        <BooksCard />
-        <BooksCard />
-        <BooksCard />
-        <BooksCard />
         
       </section>
       <button>Show more results</button>

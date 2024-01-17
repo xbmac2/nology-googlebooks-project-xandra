@@ -8,7 +8,7 @@ const BooksCard = ({
   description = "", 
   image = "No image provided",
   publishedDate = "Unknown publish date",
-  pages = "pages unkown" }) => {
+  pages = "Pages unknown" }) => {
 
   let authorStr = null;
 
