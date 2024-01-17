@@ -42,7 +42,7 @@ export const getBooksData = async (searchTerm) => {
       author: book.volumeInfo.authors,
       //author is an array
       description: book.volumeInfo.description,
-      image: book.volumeInfo.imageLinks.smallThumbnail,
+      image: book.volumeInfo.imageLinks?.smallThumbnail ?? "no image",
       publishedDate: book.volumeInfo.publishedDate,
       pages: book.volumeInfo.pageCount
     }
