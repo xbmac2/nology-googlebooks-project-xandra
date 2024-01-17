@@ -5,6 +5,13 @@ import { getBooksData } from "../../data/data"
 import { useState, useEffect } from "react"
 
 const BooksList = ({searchTerm}) => {
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behaviour: "smooth"
+    });
+  };
  
   const [booksFetched, setBooksFetched] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -34,12 +41,28 @@ const BooksList = ({searchTerm}) => {
         author={book.author}
         description={book.description}
         image={book.image}
+        publishedDate={book.publishedDate}
+        pages={book.pages}
         />
         ))}
+        <BooksCard />
+        <BooksCard />
+        <BooksCard />
+        <BooksCard />
+        <BooksCard />
+        <BooksCard />
+        <BooksCard />
+        <BooksCard />
+        <BooksCard />
+        <BooksCard />
+        <BooksCard />
+        <BooksCard />
+        <BooksCard />
+        <BooksCard />
         
       </section>
-
-      
+      <button>Show more results</button>
+      <p className={styles.to_top} onClick={scrollToTop}>Back to top</p>
     </div>
   )
 }

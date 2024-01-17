@@ -1,11 +1,15 @@
 .container {
   
   width: 100%;
-  padding-top: 10px;
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   //border: 1px solid grey;
   // display: flex;
   // flex-direction: row;
   // flex-wrap: wrap;
+  gap: 8px;
 }
 
 .books_section {
@@ -20,11 +24,16 @@
   display: grid;
   //grid-template-columns: auto auto auto auto;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  //grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  border: 1px solid red;
+  width: 100vw;
 }
 
-.books_testing {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  gap: 1rem;
+.to_top {
+  text-decoration: underline;
+  
+  &:hover {
+    color: #8c887a;
+  }
 }

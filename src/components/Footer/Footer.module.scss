@@ -1,0 +1,13 @@
+.footer {
+  background-color: #f7f0e0;
+  background-image: url("../../assets/blurred-neutral-stripes.png");
+  background-size: cover;
+  min-height: 15px;
+
+  display: flex;
+  justify-content: center;
+  
+  & p {
+    padding: 4px 0px;
+  }
+}

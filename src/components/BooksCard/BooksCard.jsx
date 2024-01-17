@@ -6,7 +6,9 @@ const BooksCard = ({
   title = "Title unknown", 
   author = [], 
   description = "", 
-  image = "No image provided" }) => {
+  image = "No image provided",
+  publishedDate = "Unknown publish date",
+  pages = "pages unkown" }) => {
 
   let authorStr = null;
 
@@ -21,7 +23,13 @@ const BooksCard = ({
 
   const [modalShowing, setModalShowing] = useState(false);
   const toggleModal = () => {
-    setModalShowing(!modalShowing)
+    setModalShowing(!modalShowing);
+  };
+
+  if (modalShowing) {
+    document.body.classList.add("active_modal");
+  } else {
+    document.body.classList.remove("active_modal");
   }
 
   return (
@@ -37,7 +45,13 @@ const BooksCard = ({
       </div>
       {description ? <p className={styles.padding}>{descriptionShort}</p> : <p className={styles.padding}>No description found</p>}
       {/* <p>Desc: {descriptionShort}</p> */}
-      {modalShowing && <Modal toggleModal={toggleModal}/>}
+      {modalShowing && <Modal 
+      toggleModal={toggleModal}
+      description={description}
+      publishedDate={publishedDate}
+      pages={pages}
+      title={title}
+      />}
       
     </article>
   )
