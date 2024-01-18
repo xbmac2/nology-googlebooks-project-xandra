@@ -6,7 +6,7 @@ const BooksCard = ({
   title = "Title unknown", 
   author = [], 
   description = "", 
-  image = "src/assets/default-image.png",
+  image = "../../assets/default-image.png", //"src/assets/default-image.png",
   publishedDate = "Unknown publish date",
   pages = "Pages unknown" }) => {
 
