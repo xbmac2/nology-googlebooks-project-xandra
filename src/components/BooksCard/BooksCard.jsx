@@ -1,12 +1,13 @@
 import Modal from "../Modal/Modal";
-import styles from "./BooksCard.module.scss"
+import styles from "./BooksCard.module.scss";
 import { useState } from "react";
+import defaultImage from "../../assets/default-image.png";
 
 const BooksCard = ({ 
   title = "Title unknown", 
   author = [], 
   description = "", 
-  image = "../../assets/default-image.png", //"src/assets/default-image.png",
+  image, //= "../../assets/default-image.png", //"src/assets/default-image.png",
   publishedDate = "Unknown publish date",
   pages = "Pages unknown" }) => {
 
@@ -36,7 +37,7 @@ const BooksCard = ({
     <article className={styles.card} onClick={toggleModal}>
       {/* no imageprovided thumbnail shuould actually be a link to the image */}
       <div className={styles.card_frame}>
-        <img src={image} alt="" className={styles.image}/>
+        <img src={image ?? defaultImage} alt="" className={styles.image}/>
       </div>
       
       <div className={styles.padding}>
