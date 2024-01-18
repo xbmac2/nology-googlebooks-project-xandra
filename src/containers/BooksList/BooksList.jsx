@@ -73,8 +73,9 @@ const BooksList = ({searchTerm}) => {
         ))}
         
       </section>
-      <button onClick={handleShowMoreBooks}>Show more results</button>
-      <p className={styles.to_top} onClick={scrollToTop}>Back to top</p>
+      {booksFetched.length > 0 && <button onClick={handleShowMoreBooks}>Show more results</button>}
+      {booksFetched.length > 0 && <p className={styles.to_top} onClick={scrollToTop}>Back to top</p>}
+      
     </div>
   )
 }

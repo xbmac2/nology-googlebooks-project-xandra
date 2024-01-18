@@ -31,7 +31,7 @@ export const getBooksData = async (searchTerm) => {
   //console.log(data);
 
   if (data.totalItems === 0) {
-    console.log("no items to display")
+    console.log("No items to display");
     return null;
   }
 

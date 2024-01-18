@@ -6,7 +6,11 @@ const Modal = ({toggleModal, description, publishedDate, pages, title }) => {
     <div className={styles.modal}>
       <div className={styles.overlay} onClick={toggleModal}></div>
       <div className={styles.modal_content}>
-        <h4>{title}</h4>
+        <div className={styles.space_between}>
+          <h4>{title}</h4>
+          
+        </div>
+        
         <p><b>Pages: </b>{pages}</p>
         <p><b>Published: </b>{publishedDate}</p>
         <p><b>Description: </b>{description ? description : "No description found"}</p>
