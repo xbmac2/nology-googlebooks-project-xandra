@@ -42,7 +42,7 @@ export const getBooksData = async (searchTerm) => {
       author: book.volumeInfo.authors,
       //author is an array
       description: book.volumeInfo.description,
-      image: book.volumeInfo.imageLinks?.smallThumbnail ?? "no image",
+      image: book.volumeInfo.imageLinks?.smallThumbnail ?? "src/assets/default-image.png",
       publishedDate: book.volumeInfo.publishedDate,
       pages: book.volumeInfo.pageCount
     }
@@ -65,7 +65,7 @@ export const getMoreBooksData = async (searchTerm, startIndex) => {
       author: book.volumeInfo.authors,
       //author is an array
       description: book.volumeInfo.description,
-      image: book.volumeInfo.imageLinks?.smallThumbnail ?? "no image",
+      image: book.volumeInfo.imageLinks?.smallThumbnail ?? "src/assets/default-image.png",
       publishedDate: book.volumeInfo.publishedDate,
       pages: book.volumeInfo.pageCount
     }

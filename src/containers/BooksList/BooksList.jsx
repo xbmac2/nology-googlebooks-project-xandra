@@ -45,15 +45,15 @@ const BooksList = ({searchTerm}) => {
       //   return [...prev, ...results];
       // })
       setBooksFetched((prev) => {
-        console.log(prev, "prev");
-        console.log(prev.concat(results), "concated");
+        //console.log(prev, "prev");
+        //console.log(prev.concat(results), "concated");
         return prev.concat(results);
       })
     })
   };
 
   
-  console.log(booksFetched,"booksFetched array")
+  //console.log(booksFetched,"booksFetched array")
 
   return (
     <div className={styles.container}>

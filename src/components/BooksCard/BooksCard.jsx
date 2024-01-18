@@ -6,7 +6,7 @@ const BooksCard = ({
   title = "Title unknown", 
   author = [], 
   description = "", 
-  image = "No image provided",
+  image = "src/assets/default-image.png",
   publishedDate = "Unknown publish date",
   pages = "Pages unknown" }) => {
 
@@ -36,15 +36,15 @@ const BooksCard = ({
     <article className={styles.card} onClick={toggleModal}>
       {/* no imageprovided thumbnail shuould actually be a link to the image */}
       <div className={styles.card_frame}>
-        <img src={image} alt="" className={styles.padding}/>
+        <img src={image} alt="" className={styles.image}/>
       </div>
       
       <div className={styles.padding}>
         <h3>{title}</h3>
         <p>{authorStr}</p>
       </div>
-      {description ? <p className={styles.padding}>{descriptionShort}</p> : <p className={styles.padding}>No description found</p>}
-      {/* <p>Desc: {descriptionShort}</p> */}
+      {/* {description ? <p className={styles.padding}>{descriptionShort}</p> : <p className={styles.padding}>No description found</p>} */}
+      <p className={styles.padding}>{description ? descriptionShort : "No description available"}</p>
       {modalShowing && <Modal 
       toggleModal={toggleModal}
       description={description}
