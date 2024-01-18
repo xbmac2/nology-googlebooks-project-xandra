@@ -52,7 +52,6 @@ const BooksCard = ({
       pages={pages}
       title={title}
       />}
-      
     </article>
   )
 }
