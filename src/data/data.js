@@ -22,7 +22,7 @@ export const getFlowerBooksData = async () => {
 
 export const getBooksData = async (searchTerm) => {
   //console.log(searchTerm, "from function");
-  const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&maxResults=40&startIndex=0`);
+  const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&maxResults=15&startIndex=0`);
   const data = await response.json();
   //console.log(data.items[0]);
   //https://www.googleapis.com/books/v1/volumes?q=flowers
@@ -55,7 +55,7 @@ export const getBooksData = async (searchTerm) => {
 
 //this function will fetch the next 40 books with the searchTerm, depending on how many books in the booksFetched array in BooksList.jsx
 export const getMoreBooksData = async (searchTerm, startIndex) => {
-  const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&maxResults=40&startIndex=${startIndex}`);
+  const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&maxResults=15&startIndex=${startIndex}`);
   const data = await response.json();
 
   const cleanedData = data.items.map((book) => {

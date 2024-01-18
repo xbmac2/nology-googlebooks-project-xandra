@@ -31,21 +31,29 @@ const BooksList = ({searchTerm}) => {
 
   //console.log(booksFetched,"booksFeched array")
 
-  let startIndex = booksFetched.length;
+  
 
   const handleShowMoreBooks = () => {
     setIsLoading(true);
+    let startIndex = booksFetched.length;
+
+    console.log(startIndex, "start index");
     getMoreBooksData(searchTerm, startIndex).then((results) => {
       setIsLoading(false);
       //console.log(results);
+      // setBooksFetched((prev) => {
+      //   return [...prev, ...results];
+      // })
       setBooksFetched((prev) => {
-        return [...prev, ...results];
+        console.log(prev, "prev");
+        console.log(prev.concat(results), "concated");
+        return prev.concat(results);
       })
     })
   };
 
-  console.log(startIndex, "start index");
-  //console.log(booksFetched,"booksFeched array")
+  
+  console.log(booksFetched,"booksFetched array")
 
   return (
     <div className={styles.container}>
