@@ -1,3 +1,5 @@
+@use "src/styles/palette.scss";
+
 .container {
   
   width: 100%;
@@ -35,6 +37,7 @@
   text-decoration: underline;
   
   &:hover {
-    color: #8c887a;
+    //color: #8c887a;
+    color: palette.$grey-neutral;
   }
 }

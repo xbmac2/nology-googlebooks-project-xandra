@@ -1,8 +1,9 @@
-@use "../../style-variables/palette";
+@use "src/styles/palette.scss";
 @import url('https://fonts.googleapis.com/css2?family=Mulish&family=Philosopher&display=swap');
 
 .container {
-  background-color: #f7f0e0;
+  //background-color: #f7f0e0;
+  background-color: palette.$pale-neutral;
   // background-image: url("src/assets/blurred-neutral-stripes.png");
   background-image: url("../../assets/blurred-neutral-stripes.png");
   background-size: cover;
