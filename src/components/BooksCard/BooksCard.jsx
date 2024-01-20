@@ -2,6 +2,7 @@ import Modal from "../Modal/Modal";
 import styles from "./BooksCard.module.scss";
 import { Fragment, useState } from "react";
 import assets from "../../assets/assets";
+import defaultImage from "/default-image.png";
 
 const BooksCard = ({ 
   title = "Title unknown", 
@@ -38,7 +39,8 @@ const BooksCard = ({
       <article className={styles.card} onClick={toggleModal}>
       {/* no imageprovided thumbnail shuould actually be a link to the image */}
       <div className={styles.card_frame}>
-        <img src={image ?? assets.defaultBookCover} alt="" className={styles.image}/>
+        {/* <img src={image ?? assets.defaultBookCover} alt="" className={styles.image}/> */}
+        <img src={image ?? defaultImage} alt="" className={styles.image}/>
       </div>
       
       <div className={styles.padding}>
