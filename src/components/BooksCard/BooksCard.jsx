@@ -40,7 +40,7 @@ const BooksCard = ({
       {/* no imageprovided thumbnail shuould actually be a link to the image */}
       <div className={styles.card_frame}>
         {/* <img src={image ?? assets.defaultBookCover} alt="" className={styles.image}/> */}
-        <img src={image ?? defaultImage} alt="" className={styles.image}/>
+        <img src={image ?? "/default-image.png"} alt="" className={styles.image}/>
       </div>
       
       <div className={styles.padding}>
