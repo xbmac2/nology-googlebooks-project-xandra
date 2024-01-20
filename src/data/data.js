@@ -30,10 +30,14 @@ export const getBooksData = async (searchTerm) => {
 
   //console.log(data);
 
+  // if (data.totalItems === 0) {
+  //   console.log("No items to display");
+  //   return null;
+  // }
+
   if (data.totalItems === 0) {
-    console.log("No items to display");
-    return null;
-  }
+    throw new Error("No books matched your search")
+  };
 
   const cleanedData = data.items.map((book) => {
     return {

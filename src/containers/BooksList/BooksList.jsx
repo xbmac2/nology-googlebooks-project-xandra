@@ -16,13 +16,25 @@ const BooksList = ({searchTerm}) => {
   const [booksFetched, setBooksFetched] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  const [errorMessage, setErrorMessage] = useState("");
+
   useEffect(() => {
     if (searchTerm) {
+      setErrorMessage("");
+      setBooksFetched([]);
       setIsLoading(true);
-      getBooksData(searchTerm).then((results) => {
-      setIsLoading(false);
+      getBooksData(searchTerm)
+      .then((results) => {
+      
       setBooksFetched(results);
-    })
+      })
+      .catch((error) => {
+        console.log(error.message);
+        setErrorMessage(error.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      })
     }
     
   }, [searchTerm])
@@ -37,7 +49,7 @@ const BooksList = ({searchTerm}) => {
     setIsLoading(true);
     let startIndex = booksFetched.length;
 
-    console.log(startIndex, "start index");
+    //console.log(startIndex, "start index");
     getMoreBooksData(searchTerm, startIndex).then((results) => {
       setIsLoading(false);
       //console.log(results);
@@ -59,6 +71,7 @@ const BooksList = ({searchTerm}) => {
     <div className={styles.container}>
       
       {booksFetched ? null : (<p>No books matched your search</p>)}
+      {errorMessage && <p>{errorMessage}</p>}
       <section className={styles.books_section2}>
         {booksFetched && booksFetched.map((book) => (
         <BooksCard 
@@ -71,7 +84,7 @@ const BooksList = ({searchTerm}) => {
         pages={book.pages}
         />
         ))}
-        <BooksCard />
+        {/* <BooksCard /> */}
       </section>
       {isLoading && <p>Loading...</p>}
       {booksFetched.length > 0 && <button onClick={handleShowMoreBooks}>Show more results</button>}
