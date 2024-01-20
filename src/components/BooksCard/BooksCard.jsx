@@ -1,12 +1,13 @@
 import Modal from "../Modal/Modal";
-import styles from "./BooksCard.module.scss"
-import { useState } from "react";
+import styles from "./BooksCard.module.scss";
+import { Fragment, useState } from "react";
+import defaultImage from "../../assets/default-image.png";
 
 const BooksCard = ({ 
   title = "Title unknown", 
   author = [], 
   description = "", 
-  image = "No image provided",
+  image, //= "../../assets/default-image.png", //"src/assets/default-image.png",
   publishedDate = "Unknown publish date",
   pages = "Pages unknown" }) => {
 
@@ -33,27 +34,32 @@ const BooksCard = ({
   }
 
   return (
-    <article className={styles.card} onClick={toggleModal}>
+    <Fragment>
+      <article className={styles.card} onClick={toggleModal}>
       {/* no imageprovided thumbnail shuould actually be a link to the image */}
       <div className={styles.card_frame}>
-        <img src={image} alt="" className={styles.padding}/>
+        <img src={image ?? defaultImage} alt="" className={styles.image}/>
       </div>
       
       <div className={styles.padding}>
         <h3>{title}</h3>
         <p>{authorStr}</p>
       </div>
-      {description ? <p className={styles.padding}>{descriptionShort}</p> : <p className={styles.padding}>No description found</p>}
-      {/* <p>Desc: {descriptionShort}</p> */}
-      {modalShowing && <Modal 
+      {/* {description ? <p className={styles.padding}>{descriptionShort}</p> : <p className={styles.padding}>No description found</p>} */}
+      <p className={styles.padding}>{description ? descriptionShort : "No description available"}</p>
+      
+    </article>
+
+    {modalShowing && <Modal 
       toggleModal={toggleModal}
       description={description}
       publishedDate={publishedDate}
       pages={pages}
       title={title}
       />}
-      
-    </article>
+    
+    </Fragment>
+    
   )
 }
 

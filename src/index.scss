@@ -1,3 +1,5 @@
+@use "src/styles/palette.scss";
+
 :root {
   // font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -26,13 +28,16 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #d4c6a8a1; 
+  //background-color: #d4c6a8a1; 
+  background-color: palette.$main-neutral-translucent;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #8c887a;
-  background-color: #d4c6a8;
+  //border-color: #8c887a;
+  border-color: palette.$grey-neutral;
+  //background-color: #d4c6a8;
+  background-color: palette.$main-neutral-translucent;
 }
 button:focus,
 button:focus-visible {
