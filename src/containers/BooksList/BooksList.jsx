@@ -71,7 +71,7 @@ const BooksList = ({searchTerm}) => {
         pages={book.pages}
         />
         ))}
-        
+        <BooksCard />
       </section>
       {isLoading && <p>Loading...</p>}
       {booksFetched.length > 0 && <button onClick={handleShowMoreBooks}>Show more results</button>}

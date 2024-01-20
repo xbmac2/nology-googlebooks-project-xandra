@@ -1,6 +1,6 @@
 import Modal from "../Modal/Modal";
 import styles from "./BooksCard.module.scss";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import defaultImage from "../../assets/default-image.png";
 
 const BooksCard = ({ 
@@ -34,7 +34,8 @@ const BooksCard = ({
   }
 
   return (
-    <article className={styles.card} onClick={toggleModal}>
+    <Fragment>
+      <article className={styles.card} onClick={toggleModal}>
       {/* no imageprovided thumbnail shuould actually be a link to the image */}
       <div className={styles.card_frame}>
         <img src={image ?? defaultImage} alt="" className={styles.image}/>
@@ -46,14 +47,19 @@ const BooksCard = ({
       </div>
       {/* {description ? <p className={styles.padding}>{descriptionShort}</p> : <p className={styles.padding}>No description found</p>} */}
       <p className={styles.padding}>{description ? descriptionShort : "No description available"}</p>
-      {modalShowing && <Modal 
+      
+    </article>
+
+    {modalShowing && <Modal 
       toggleModal={toggleModal}
       description={description}
       publishedDate={publishedDate}
       pages={pages}
       title={title}
       />}
-    </article>
+    
+    </Fragment>
+    
   )
 }
 
