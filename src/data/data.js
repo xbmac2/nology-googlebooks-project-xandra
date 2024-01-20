@@ -74,6 +74,6 @@ export const getMoreBooksData = async (searchTerm, startIndex) => {
       pages: book.volumeInfo.pageCount
     }
   })
-  console.log(cleanedData, "getMoreBooks data")
+  //console.log(cleanedData, "getMoreBooks data")
   return cleanedData;
 }
