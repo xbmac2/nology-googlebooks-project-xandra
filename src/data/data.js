@@ -17,7 +17,7 @@ export const getBooksData = async (searchTerm) => {
       title: book.volumeInfo.title,
       author: book.volumeInfo.authors,
       description: book.volumeInfo.description,
-      image: book.volumeInfo.imageLinks?.smallThumbnail ?? "src/assets/default-image.png",
+      image: book.volumeInfo.imageLinks?.smallThumbnail ?? "/default-image.png",
       publishedDate: book.volumeInfo.publishedDate,
       pages: book.volumeInfo.pageCount
     }
@@ -35,8 +35,7 @@ export const getMoreBooksData = async (searchTerm, startIndex) => {
       title: book.volumeInfo.title,
       author: book.volumeInfo.authors,
       description: book.volumeInfo.description,
-      //image: book.volumeInfo.imageLinks?.smallThumbnail ?? "src/assets/default-image.png",
-      image: book.volumeInfo.imageLinks.smallThumbnail,
+      image: book.volumeInfo.imageLinks?.smallThumbnail ?? "/default-image.png",
       publishedDate: book.volumeInfo.publishedDate,
       pages: book.volumeInfo.pageCount
     }
