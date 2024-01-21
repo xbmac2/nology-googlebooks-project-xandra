@@ -1,10 +1,10 @@
 import styles from "./Modal.module.scss"
 
 const Modal = ({toggleModal, description, publishedDate, pages, title }) => {
-  ////TOOK onClick={toggleModal} OFF OVERLAY!!!
+  
   return (
     <div className={styles.modal}>
-      <div className={styles.overlay}></div>
+      <div className={styles.overlay} onClick={toggleModal}></div>
       <div className={styles.modal_content}>
         <div className={styles.space_between}>
         <h4>{title}</h4>

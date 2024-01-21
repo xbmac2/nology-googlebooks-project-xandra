@@ -7,7 +7,6 @@ import OverFooterWrapper from './containers/OverFooterWrapper/OverFooterWrapper'
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
-  //console.log(searchTerm)
 
   return (
     <>
