@@ -1,8 +1,7 @@
 import Modal from "../Modal/Modal";
 import styles from "./BooksCard.module.scss";
 import { Fragment, useState } from "react";
-import assets from "../../assets/assets";
-import defaultImage from "/default-image.png";
+
 
 const BooksCard = ({ 
   title = "Title unknown", 

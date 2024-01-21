@@ -7,10 +7,6 @@ export const getBooksData = async (searchTerm) => {
     throw new Error("No books matched your search")
   };
 
-  // if (data.error.code === 429) {
-  //   throw new Error("Google Books is fielding too many searches. Try again later.")
-  // }
-
   const cleanedData = data.items.map((book) => {
     return {
       key: book.id,
