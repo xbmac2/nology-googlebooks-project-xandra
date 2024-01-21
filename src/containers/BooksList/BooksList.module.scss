@@ -7,37 +7,22 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  //border: 1px solid grey;
-  // display: flex;
-  // flex-direction: row;
-  // flex-wrap: wrap;
   gap: 8px;
 }
 
 .books_section {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  //gap: 1rem;
-  
-}
-
-.books_section2 {
   display: grid;
-  //grid-template-columns: auto auto auto auto;
+
   gap: 1rem;
-  //grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  //border: 1px solid red;
+
   width: 98vw;
-  //margin: 0px 10px;
 }
 
 .to_top {
   text-decoration: underline;
   
   &:hover {
-    //color: #8c887a;
     color: palette.$grey-neutral;
   }
 }

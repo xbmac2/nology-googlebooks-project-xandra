@@ -39,40 +39,26 @@ const BooksList = ({searchTerm}) => {
     
   }, [searchTerm])
 
-  //let booksToDisplay = [...booksFetched];
-
-  //console.log(booksFetched,"booksFeched array")
-
-  
 
   const handleShowMoreBooks = () => {
     setIsLoading(true);
     let startIndex = booksFetched.length;
 
-    //console.log(startIndex, "start index");
-    getMoreBooksData(searchTerm, startIndex).then((results) => {
+    getMoreBooksData(searchTerm, startIndex)
+    .then((results) => {
       setIsLoading(false);
-      //console.log(results);
-      // setBooksFetched((prev) => {
-      //   return [...prev, ...results];
-      // })
       setBooksFetched((prev) => {
-        //console.log(prev, "prev");
-        //console.log(prev.concat(results), "concated");
         return prev.concat(results);
       })
     })
   };
-
-  
-  //console.log(booksFetched,"booksFetched array")
 
   return (
     <div className={styles.container}>
       
       {booksFetched ? null : (<p>No books matched your search</p>)}
       {errorMessage && <p>{errorMessage}</p>}
-      <section className={styles.books_section2}>
+      <section className={styles.books_section}>
         {booksFetched && booksFetched.map((book) => (
         <BooksCard 
         key={book.key}
@@ -84,7 +70,7 @@ const BooksList = ({searchTerm}) => {
         pages={book.pages}
         />
         ))}
-        {/* <BooksCard /> */}
+        
       </section>
       {isLoading && <p>Loading...</p>}
       {booksFetched.length > 0 && <button onClick={handleShowMoreBooks}>Show more results</button>}
