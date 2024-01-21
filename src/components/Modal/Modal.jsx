@@ -1,13 +1,20 @@
 import styles from "./Modal.module.scss"
 
-const Modal = ({toggleModal}) => {
+const Modal = ({toggleModal, description, publishedDate, pages, title }) => {
+  
   return (
     <div className={styles.modal}>
       <div className={styles.overlay} onClick={toggleModal}></div>
       <div className={styles.modal_content}>
-        <h4>Modal title</h4>
-        <p>Modal para Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi id quaerat. Odit laborum at quidem illum, repellat quod, possimus praesentium adipisci repellendus sunt expedita voluptatibus libero pariatur, rerum reiciendis veniam? Dignissimos saepe pariatur libero ex consequuntur quis vitae, consequatur, molestiae necessitatibus labore corporis magnam consectetur quasi facere nisi numquam!</p>
+        <div className={styles.space_between}>
+        <h4>{title}</h4>
         <button className={styles.close_modal} onClick={toggleModal}>Close</button>
+        </div>
+        
+        <p><b>Pages: </b>{pages}</p>
+        <p><b>Published: </b>{publishedDate}</p>
+        <p><b>Description: </b>{description ? description : "No description found"}</p>
+        
       </div>
     </div>
   )

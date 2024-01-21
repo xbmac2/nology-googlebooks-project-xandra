@@ -1,12 +1,7 @@
-body.active-modal {
-  overflow-y: hidden;
-}
+@use "src/styles/palette.scss";
 
-.btn-modal {
-  padding: 10px 20px;
-  display: block;
-  margin: 100px auto 0;
-  font-size: 18px;
+body.active_modal {
+  overflow-y: hidden;
 }
 
 .modal, .overlay {
@@ -20,24 +15,58 @@ body.active-modal {
 }
 
 .overlay {
-  background: rgba(49,49,49,0.8);
+  background: palette.$bg-grey;
 }
+
+@keyframes popOpenTransition {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+  } to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
 .modal_content {
   position: absolute;
-  top: 40%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   line-height: 1.4;
-  background: #f1f1f1;
+  background: palette.$near-white;
   padding: 14px 28px;
   border-radius: 3px;
   max-width: 600px;
-  min-width: 300px;
+  min-width: 230px;
+ 
+
+  max-height: 65vh;
+  overflow: hidden;
+  overflow-y: scroll;
+
+  text-align: left;
+
+  animation-name: popOpenTransition;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  & * {
+    padding: 4px 0px;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .close_modal {
-  position: absolute;
-  top: 10px;
-  right: 10px;
   padding: 5px 7px;
+  height: 30px;
+}
+
+.space_between {
+  display: flex;
+  justify-content: space-between;
 }

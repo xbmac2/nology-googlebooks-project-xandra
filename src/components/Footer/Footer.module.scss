@@ -1,0 +1,20 @@
+@use "src/styles/palette.scss";
+
+.footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+
+  background-color: palette.$pale-neutral;
+  background-image: url("../../assets/blurred-neutral-stripes.png");
+  background-size: cover;
+  min-height: 18px;
+
+  display: flex;
+  justify-content: center;
+  
+  & p {
+    padding: 4px 0px;
+  }
+}

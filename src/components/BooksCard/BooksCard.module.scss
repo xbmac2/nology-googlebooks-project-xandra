@@ -3,7 +3,7 @@
 .card {
   border: 1px solid black;
   border-radius: 3px;
-  //width: 400px;
+  padding: 8px;
   margin: 5px;
 
   font-family: 'Mulish', sans-serif;
@@ -22,21 +22,14 @@
   padding: 5px;
 }
 
-.card_testing {
-  border: 1px solid red;
-  border-radius: 3px;
-  //width: 400px;
-  //max-width: 25%;
-  margin: 5px;
+.image {
+  max-width: 160px;
+  padding: 5px;
+}
 
-  font-family: 'Mulish', sans-serif;
-  text-align: center;
+.card_frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  &:hover {
-    background-color: lightgray;
-  }
-
-  & h3 {
-    font-family: 'Philosopher', sans-serif;
-  }
 }
