@@ -15,7 +15,6 @@ body.active_modal {
 }
 
 .overlay {
-  //background: rgba(49,49,49,0.8);
   background: palette.$bg-grey;
 }
 
@@ -33,20 +32,16 @@ body.active_modal {
   left: 50%;
   transform: translate(-50%, -50%);
   line-height: 1.4;
-  //background: #f1f1f1;
   background: palette.$near-white;
   padding: 14px 28px;
   border-radius: 3px;
   max-width: 600px;
   min-width: 230px;
-  //min-width: 300px;
+ 
 
   max-height: 65vh;
   overflow: hidden;
   overflow-y: scroll;
-
-  //margin: auto, 8px;
-  //border: 1px solid red;
 
   text-align: left;
 
@@ -67,9 +62,6 @@ body.active_modal {
 }
 
 .close_modal {
-  // position: absolute;
-  // top: 10px;
-  // right: 10px;
   padding: 5px 7px;
   height: 30px;
 }
@@ -78,16 +70,3 @@ body.active_modal {
   display: flex;
   justify-content: space-between;
 }
-
-// @media screen and (max-width: 350px) {
-//   .modal_content {
-//     width: 300px;
-//   }
-
-  
-// }
-
-// .showing .modal_content {
-//   transition: all 300ms ease-in-out;
-//   transform: translate(-50%, -50%) scale(1);
-// }
